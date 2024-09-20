@@ -1,0 +1,231 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    section {
+        margin: 10px 0;
+        padding: 10px;
+    }
+}
+
+/* heading animation */
+.animated-title {
+    font-size: 2.5rem;
+    color: #ADD8E6;
+    animation: fadeInUp 2s ease-in-out forwards;
+    opacity: 0;
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Basic styles for the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation link styles */
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover effects for navigation links */
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc00;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Hover scale effect */
+nav a:hover {
+    transform: scale(1.1);
+    color: #ffcc00;
+}
+
+/* Add a slight shadow for more depth */
+nav a:hover {
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero section styling */
+#hero {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-image: url('Images/Motivate\ Yourself\ Wallpaper.png');
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-content h2 {
+    color: #000000;
+    font-family: 'Open Sans' ;
+    font-size: 3rem;
+    text-align: center;
+    background-color: #ffffff5d;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out forwards, moveUp 2s ease-in-out forwards;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly lower */
+}
+
+/* Parallax effect: Smooth background scroll */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Keyframes for fading in and moving up the text */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Reading Materials section */
+#reading {
+    padding: 40px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#reading h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling the reading material items */
+/* Reading Materials section */
+#reading {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#reading h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Flexbox layout for reading materials */
+.reading-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Styling each material item (PDFs, Google Photos links, etc.) */
+.material-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 220px; /* Slightly larger than the image */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for each material item */
+.material-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling the image (PDF logos) */
+.material-item img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover; /* Ensure the image fits nicely */
+    margin-bottom: 15px;
+}
+
+/* Styling the links */
+.material-item a {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.material-item a:hover {
+    color: #ffcc00; /* Color change on hover */
+}
+
+@media (max-width: 768px) {
+    .material-item {
+        width: 100%;
+    }
+}
+/* Above is media query for other devices in reading materials*/
