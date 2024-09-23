@@ -25,8 +25,34 @@
     
     <section id="gallery">
         <h2>Gallery</h2>
-        <!-- Gallery content goes here -->
+        <div class="gallery-grid">
+            <!-- Thumbnails of your edited photos -->
+            <div class="gallery-item">
+                <a href="Gallery/Aasif Sheikh.png" target="_blank">
+                    <img src="Gallery/Aasif Sheikh.png" alt="Edited Photo 1">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="Gallery/Abinash Bohara.png" target="_blank">
+                    <img src="Gallery/Abinash Bohara.png" alt="Edited Photo 2">
+                </a>
+            </div>
+            <!-- More photos initially hidden -->
+            <div class="gallery-item hidden">
+                <a href="Images/photo3.jpg" target="_blank">
+                    <img src="Images/photo3-thumb.jpg" alt="Edited Photo 3">
+                </a>
+            </div>
+            <div class="gallery-item hidden">
+                <a href="Images/photo4.jpg" target="_blank">
+                    <img src="Images/photo4-thumb.jpg" alt="Edited Photo 4">
+                </a>
+            </div>
+            <!-- Add as many photos as you need -->
+        </div>
+        <button id="show-more-btn">Show More</button>
     </section>
+    
 
     <section id="projects">
         <h2>Projects</h2>
@@ -62,7 +88,11 @@
         </div>
     </section>
     
-    
+    <!-- Lightbox container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <footer id="contact">
         <h2>Contact Me</h2>

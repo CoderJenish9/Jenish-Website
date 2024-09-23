@@ -36,3 +36,45 @@ googleLinks.forEach(link => {
     });
 });
 
+// JavaScript to show more photos
+const showMoreBtn = document.getElementById('show-more-btn');
+const hiddenItems = document.querySelectorAll('.hidden');
+
+showMoreBtn.addEventListener('click', () => {
+    hiddenItems.forEach(item => {
+        item.classList.toggle('hidden'); // Toggle the visibility of hidden items
+    });
+
+    // Toggle the button text between 'Show More' and 'Show Less'
+    if (showMoreBtn.innerText === 'Show More') {
+        showMoreBtn.innerText = 'Show Less';
+    } else {
+        showMoreBtn.innerText = 'Show More';
+    }
+});
+
+// JavaScript for lightbox functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+// When any gallery item is clicked
+document.querySelectorAll('.gallery-item a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        lightbox.style.display = 'flex'; // Show the lightbox
+        lightboxImg.src = link.href; // Set lightbox image to the full-size image link
+    });
+});
+
+// Close the lightbox when the close button is clicked
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// Optional: Close the lightbox when clicking outside the image
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
